@@ -1,4 +1,4 @@
-FROM java:7-jre
+FROM java:8-jre
 #https://github.com/docker-library/tomcat
 
 ENV CATALINA_HOME /usr/local/tomcat
@@ -22,8 +22,8 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE \
 	F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
 
-ENV TOMCAT_MAJOR 7
-ENV TOMCAT_VERSION 7.0.72
+ENV TOMCAT_MAJOR 8
+ENV TOMCAT_VERSION 8.5.5
 ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 RUN set -x \
@@ -36,6 +36,6 @@ RUN set -x \
 
 ADD ./target/*.war $CATALINA_HOME/webapps/
 
-EXPOSE 9089
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
 
