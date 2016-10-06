@@ -1,7 +1,7 @@
 FROM java:8-jre
 #https://github.com/docker-library/tomcat
 
-ENV CATALINA_HOME /usr/local/tomcat
+ENV CATALINA_HOME /usr/local/apache-tomcac.7.0.64
 ENV PATH $CATALINA_HOME/bin:$PATH
 
 RUN mkdir -p "$CATALINA_HOME"
